@@ -5,17 +5,12 @@ import com.branko.game.service.element.PaperElement;
 import com.branko.game.service.element.RockElement;
 import com.branko.game.service.element.ScissorsElement;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.runners.MockitoJUnitRunner;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@RunWith(MockitoJUnitRunner.class)
 class RockVisitorTest {
 
-    @InjectMocks
-    private RockVisitor rockVisitor = new RockVisitor();
+    private final RockVisitor rockVisitor = new RockVisitor();
 
     @Test
     void testPlayRock() {

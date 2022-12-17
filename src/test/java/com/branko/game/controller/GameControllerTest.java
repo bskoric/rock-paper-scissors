@@ -8,13 +8,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class GameControllerTest {
 
-    private static final int NUMBER_OF_ROUDS = 5;
-    private GameController gameController = new GameController();
+    private static final int NUMBER_OF_ROUNDS = 5;
+    private final GameController gameController = new GameController();
 
     @Test
     void testPlayGame() {
-        Game game = gameController.playGame(NUMBER_OF_ROUDS);
+        Game game = gameController.playGame(NUMBER_OF_ROUNDS);
         assertEquals(Move.PAPER.toString(), game.getPlayerA().getMove().getName());
-        assertEquals(NUMBER_OF_ROUDS, game.getStatistics().getNumberOfRounds());
+        assertEquals(NUMBER_OF_ROUNDS, game.getStatistics().getNumberOfRounds());
     }
 }

@@ -2,13 +2,12 @@ package com.branko.game.service.element;
 
 import com.branko.game.domain.GameResult;
 import com.branko.game.domain.Move;
-import com.branko.game.service.visitor.RockVisitor;
 import com.branko.game.service.visitor.ScissorsVisitor;
 import org.junit.jupiter.api.Test;
 
 import java.util.Objects;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ScissorsElementTest {
 
