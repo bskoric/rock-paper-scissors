@@ -2,15 +2,11 @@ package com.branko.game.controller;
 
 import com.branko.game.domain.Game;
 import com.branko.game.domain.GameResult;
+import com.branko.game.domain.Move;
 import com.branko.game.domain.Player;
 import com.branko.game.domain.Statistics;
 import com.branko.game.service.element.AbstractElement;
-import com.branko.game.service.element.PaperElement;
-import com.branko.game.service.element.RockElement;
-import com.branko.game.service.element.ScissorsElement;
-import com.branko.game.service.visitor.PaperVisitor;
-import com.branko.game.service.visitor.RockVisitor;
-import com.branko.game.service.visitor.ScissorsVisitor;
+import com.branko.game.service.element.ElementFactory;
 
 import java.util.Arrays;
 import java.util.List;
@@ -21,9 +17,9 @@ public class GameController {
     private final Random random = new Random();
 
     public Game playGame(int numberOfRounds) {
-        AbstractElement paper = new PaperElement(new PaperVisitor());
-        AbstractElement scissors = new ScissorsElement(new ScissorsVisitor());
-        AbstractElement rock = new RockElement(new RockVisitor());
+        AbstractElement paper = ElementFactory.create(Move.PAPER);
+        AbstractElement scissors = ElementFactory.create(Move.SCISSORS);
+        AbstractElement rock = ElementFactory.create(Move.ROCK);
         List<AbstractElement> elements = Arrays.asList(paper, rock, scissors);
 
         Player playerA = new Player("Player A");
